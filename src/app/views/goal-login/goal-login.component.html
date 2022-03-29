@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="login">
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="url">Home</a>
+                    </li>
+                    <li>
+                        <a href="url">Como funciona</a>
+                    </li>
+                    <li>
+                        <a href="url">Quem somos</a>
+                    </li>
+                    <li>
+                        <a href="url">Precisa de ajuda?</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="marca">
+                <h1>GOAL</h1>
+                <p>
+                    A plataforma de serviços financeiros de quem sonha e conquista.
+                </p>
+            </div>
+
+            <div id="formulario">
+                <div class="row">
+                    <div class="col-4">
+
+                        <form >
+
+                            <div class="row">
+                                <div class="col">
+                                    <label class="col-sm-2 col-form-label"  for="usuario">Usuário</label>
+                                    <input id="usuario" type="text"  formControlName="usuario" />
+                                    <p>Nome: {{usuario.value}}
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="col-sm-2 col-form-label">Senha</label>
+                                    <input id="senha" type="text" formControlName="senha"/>
+                                </div>
+                            </div>
+
+                        
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <button class="button" (click)="entrar()">Entrar</button>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col">
+                                    <a (click)="esqueci()" class="btn btn-link" href="/">Esqueci minha senha</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a (click)="criar()" class="btn btn-link" href="/">Criar conta</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

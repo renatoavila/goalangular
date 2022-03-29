@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="home">
+        <div id="menu">
+          <div id='logo' class='col-6'>
+            <div id='logoPrincipal'>
+              GOAL
+            </div>
+            <div id='saldoGeral'>Total Investido <br />
+            </div>
+            <div>
+              <p>Minhas Metas</p>
+            </div>
+          </div>
+          <ul id='listaMenu'>
+            <li>
+              <a href="url">Home</a>
+            </li>
+            <li>
+              <a href="url">Como funciona</a>
+            </li>
+            <li>
+              <a href="url">Quem somos</a>
+            </li>
+            <li>
+              <a href="url">Precisa de ajuda?</a>
+            </li>
+            <li>
+              <a href="url">Conta</a>
+            </li>
+          </ul>
+        </div>
+        <div class='col-6'>
+
+          <div id='boasVindas'>
+            <h5 class='text-left'><b> Olá, usuario   <br />
+                Acompanhe suas metas:
+              </b></h5>
+          </div>
+        </div>
+        <div class='col-6'>
+
+            
+
+          <ul id='metas'>
+
+            <li *ngFor="let meta of goal">
+              <span class='col-5'>
+                <b> {{ meta.descricao_meta }} </b>
+                <b>Valor Acumulado</b>
+                <b>Meta</b><br />
+              </span>
+              <span class='col-3 text-success text-center'>
+                <small>{{ meta.vencimento_meta}}</small>
+                <b> {{ meta.valor_acumulado}}</b>
+                <b> {{ meta.valor_meta}}</b>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+   
+  </div>
+</div> 
+<footer></footer>
+

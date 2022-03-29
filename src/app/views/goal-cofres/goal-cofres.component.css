@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+.home {
+    height: 100vh; 
+    background-image: url(../../../../img/backResumo.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#menu{  
+    height: 100px; 
+    line-height: 100px; 
+    box-sizing: border-box;
+}
+
+#logo{
+    float: left;
+}
+
+#logo div{
+    float: left;
+}
+
+#listaMenu{
+    float: right;
+}
+
+ul{ list-style: none;}
+ul li{ display: inline; margin-right: 30px;
+
+}
+
+ul li a{
+    font-family: calibri;
+    color:#563E94;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+ul li a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+
+#marca{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 { 
+    font-size: 100px;
+    color: #563E94;
+}
+
+ a.btn-link { 
+    color:#563E94!important; 
+    padding: 0;
+}
+
+
+#formulario, #marca{ 
+    padding-left: 2rem; 
+}
+
+#metas li{
+margin-top: 5%;
+float: left;
+width: 70%;
+height: 50px;
+border-bottom: solid 1px #D538F1;
+}
+
+#boasVindas{
+    margin-left: 3%;
+    text-align: left;
+    margin-top: 6%;
+}
+
+#boasVindas h5{
+    float: left;
+    width: 100%;
+    text-align: left;
+    
+}
+
+#logoPrincipal{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #563E94;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#saldoGeral{
+    background-color: #563E94;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    padding: 30px;
+    margin-right: 5%;
+}
+
+footer{
+    background-color: #563E94;
+    height: 5vh; 
+}
