@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-goal-login',
@@ -10,18 +10,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 export class GoalLoginComponent implements OnInit {
 
-  /*
-  profileForm = new FormGroup({
-    usuario: new FormControl(''),
+  
+  usuarioForm = new FormGroup({
+    user: new FormControl(''),
     senha: new FormControl(''),
   });
   
-  */
-  usuario = new FormControl('');
-  senha =new FormControl('');
 
   entrar() {
-    window.alert('Entrar');
+    window.alert('Entrar: ' + this.usuarioForm.value );
   }
 
   esqueci() {
@@ -38,3 +35,5 @@ export class GoalLoginComponent implements OnInit {
   }
 
 }
+
+

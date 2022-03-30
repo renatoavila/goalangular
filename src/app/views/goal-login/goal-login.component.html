@@ -29,34 +29,24 @@
                 <div class="row">
                     <div class="col-4">
 
-                        <form >
+                        <form [formGroup]="usuarioForm">
 
                             <div class="row">
                                 <div class="col">
                                     <label class="col-sm-2 col-form-label"  for="usuario">Usuário</label>
-                                    <input id="usuario" type="text"  formControlName="usuario" />
-                                    <p>Nome: {{usuario.value}}
-
-                                    </p>
+                                    <input id="user" type="text"  formControlName="user">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label class="col-sm-2 col-form-label">Senha</label>
-                                    <input id="senha" type="text" formControlName="senha"/>
+                                    <input id="senha" type="password" formControlName="senha">
                                 </div>
                             </div>
-
-                        
-
+  
                             <div class="row">
                                 <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                    <button class="button" (click)="entrar()">Entrar</button>
+                                    <button type="button" class="btn btn-warning btn-sm" (click)="entrar()">Entrar</button>
                                 </div>
                             </div>
 

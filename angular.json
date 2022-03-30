@@ -33,6 +33,7 @@
           },
           "configurations": {
             "production": {
+              "aot": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -59,7 +60,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "aot": true
             }
           },
           "defaultConfiguration": "production"

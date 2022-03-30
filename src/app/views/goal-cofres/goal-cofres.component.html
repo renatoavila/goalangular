@@ -13,6 +13,7 @@
               <p>Minhas Metas</p>
             </div>
           </div>
+
           <ul id='listaMenu'>
             <li>
               <a href="url">Home</a>
@@ -31,39 +32,47 @@
             </li>
           </ul>
         </div>
+        
         <div class='col-6'>
 
           <div id='boasVindas'>
-            <h5 class='text-left'><b> Olá, usuario   <br />
+            <h5 class='text-left'><b> Olá, usuario <br />
                 Acompanhe suas metas:
               </b></h5>
           </div>
         </div>
         <div class='col-6'>
 
-            
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Descricao da Meta</th>
+                <th scope="col">Valor Acumulado</th>
+                <th scope="col">Meta</th>
+                <th scope="col">Data de Vencimento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cofre of cofres">
+                <td>{{cofre.descricao_meta}}</td>
+                <td>{{cofre.valor_acumulado}}</td>
+                <td>{{cofre.valor_meta}}</td>
+                <td>{{cofre.vencimento_meta}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" (click)="editCofre(cofre)">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCofre(cofre)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <ul id='metas'>
 
-            <li *ngFor="let meta of goal">
-              <span class='col-5'>
-                <b> {{ meta.descricao_meta }} </b>
-                <b>Valor Acumulado</b>
-                <b>Meta</b><br />
-              </span>
-              <span class='col-3 text-success text-center'>
-                <small>{{ meta.vencimento_meta}}</small>
-                <b> {{ meta.valor_acumulado}}</b>
-                <b> {{ meta.valor_meta}}</b>
-              </span>
-            </li>
-          </ul>
+
         </div>
       </div>
-      
-    </div>
-   
-  </div>
-</div> 
-<footer></footer>
 
+    </div>
+
+  </div>
+</div>
+<footer></footer>
