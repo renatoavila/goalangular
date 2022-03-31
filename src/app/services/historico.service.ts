@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Contas } from '../models/contas';
+import { Historico } from '../models/historico';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContasService {
+export class HistoricosService {
 
-  url = 'http://localhost:3006/contas'; // api rest
+  url = 'http://localhost:3009/historico'; // api rest
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -19,45 +19,45 @@ export class ContasService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   }
 
-  // Obtem todas as Contas
-  getContas(): Observable<Contas[]> {
+  // Obtem todas as Historicos
+  getHistoricos(): Observable<Historico[]> {
 
-    return this.httpClient.get<Contas[]>(this.url)
+    return this.httpClient.get<Historico[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
 
-  // Obtem uma Conta pelo id
-  getContaById(id: number): Observable<Contas> {
-    return this.httpClient.get<Contas>(this.url + '/' + id)
+  // Obtem uma Historico pelo id
+  getHistoricoById(id: number): Observable<Historico> {
+    return this.httpClient.get<Historico>(this.url + '/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // salva uma Conta
-  saveConta(conta: Contas): Observable<Contas> {
-    return this.httpClient.post<Contas>(this.url, JSON.stringify(conta), this.httpOptions)
+  // salva uma Historico
+  saveHistorico(historico: Historico): Observable<Historico> {
+    return this.httpClient.post<Historico>(this.url, JSON.stringify(historico), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // utualiza uma Conta
-  updateConta(conta: Contas): Observable<Contas> {
-    return this.httpClient.put<Contas>(this.url + '/' + conta.numConta, JSON.stringify(conta), this.httpOptions)
+  // utualiza uma Historico
+  updateHistorico(historico: Historico): Observable<Historico> {
+    return this.httpClient.put<Historico>(this.url + '/' + historico.id, JSON.stringify(historico), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
 
-  // deleta um Conta
-  deleteConta(conta: Contas) {
-    return this.httpClient.delete<Contas>(this.url + '/' + conta.numConta, this.httpOptions)
+  // deleta um Historico
+  deleteHistorico(historico: Historico) {
+    return this.httpClient.delete<Historico>(this.url + '/' + historico.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

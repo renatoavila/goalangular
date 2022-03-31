@@ -3,16 +3,12 @@ import { CofresService } from '../../services/cofres.service';
 import { Cofre } from '../../models/cofres';
 import { NgForm } from '@angular/forms';
 
-import {metas} from './metas'
-
 @Component({
   selector: 'app-goal-cofres',
   templateUrl: './goal-cofres.component.html',
   styleUrls: ['./goal-cofres.component.css']
 })
 export class GoalCofresComponent implements OnInit {
-  goal=metas;
-
   
   cofre = {} as Cofre;
   cofres: Cofre[] = [];

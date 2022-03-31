@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';  
+
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-goal-login',
@@ -17,21 +20,18 @@ export class GoalLoginComponent implements OnInit {
   });
   
 
-  entrar() {
-    window.alert('Entrar: ' + this.usuarioForm.value );
-  }
-
-  esqueci() {
-    window.alert('Esqueci');
-  }
-
-  criar() {
-    window.alert('Criar');
-  }
-
-  constructor() { }
+  constructor(
+    private loginService: LoginService,
+    private router:Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.warn('Logando como: ', this.usuarioForm.value);
+    window.alert('Entrar: ' + JSON.stringify(this.usuarioForm.value ));
+    this.router.navigateByUrl('/cofres');
   }
 
 }

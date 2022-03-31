@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { GoalCofresComponent } from './views/goal-cofres/goal-cofres.component';
 import { GoalUserComponent } from './views/goal-user/goal-user.component';
 import { GoalLoginComponent } from './views/goal-login/goal-login.component';
+import { GoalHistoricoComponent } from './views/goal-historico/goal-historico.component';
 
 
 
@@ -20,7 +21,8 @@ import { GoalLoginComponent } from './views/goal-login/goal-login.component';
     AppComponent,
     GoalCofresComponent,
     GoalUserComponent,
-    GoalLoginComponent
+    GoalLoginComponent,
+    GoalHistoricoComponent
   ],
   imports: [
     BrowserModule,

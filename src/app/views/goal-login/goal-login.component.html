@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-4">
 
-                        <form [formGroup]="usuarioForm">
+                        <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
 
                             <div class="row">
                                 <div class="col">
@@ -46,19 +46,19 @@
   
                             <div class="row">
                                 <div class="col">
-                                    <button type="button" class="btn btn-warning btn-sm" (click)="entrar()">Entrar</button>
+                                    <button type="button" type="submit"  class="btn btn-warning btn-sm">Entrar</button>
                                 </div>
                             </div>
 
 
                             <div class="row">
                                 <div class="col">
-                                    <a (click)="esqueci()" class="btn btn-link" href="/">Esqueci minha senha</a>
+                                    <a class="btn btn-link" href="/">Esqueci minha senha</a>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <a (click)="criar()" class="btn btn-link" href="/">Criar conta</a>
+                                    <a class="btn btn-link" href="/user">Criar conta</a>
                                 </div>
                             </div>
                         </form>
