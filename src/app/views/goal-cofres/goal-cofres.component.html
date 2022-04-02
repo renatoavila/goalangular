@@ -36,14 +36,14 @@
         <div class='col-6'>
 
           <div id='boasVindas'>
-            <h5 class='text-left'><b> Olá, usuario <br />
+            <h5 class='text-left'><b> Olá, {{usu}}<br />
                 Acompanhe suas metas:
               </b></h5>
           </div>
         </div>
         <div class='col-6'>
 
-          <table class="table">
+          <table class="table text-right">
             <thead>
               <tr>
                 <th scope="col">Descricao da Meta</th>
@@ -55,13 +55,10 @@
             <tbody>
               <tr *ngFor="let cofre of cofres">
                 <td>{{cofre.descricao_meta}}</td>
-                <td>{{cofre.valor_acumulado}}</td>
-                <td>{{cofre.valor_meta}}</td>
-                <td>{{cofre.vencimento_meta}}</td>
-                <td>
-                  <button type="button" class="btn btn-warning btn-sm" (click)="editCofre(cofre)">Editar</button>
-                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCofre(cofre)">Deletar</button>
-                </td>
+                <td>{{cofre.valor_acumulado | currency}}</td>
+                <td>{{cofre.valor_meta | currency}}</td>
+                <td>{{cofre.vencimento_meta | date: 'dd/MM/yyyy'}}</td>
+                
               </tr>
             </tbody>
           </table>

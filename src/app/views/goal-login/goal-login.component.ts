@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';  
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';  
 
 import { LoginService } from 'src/app/services/login.service';
+import { usuario } from './usuario';
 
 @Component({
   selector: 'app-goal-login',
@@ -23,15 +24,20 @@ export class GoalLoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router:Router,
-  ) { }
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    console.warn('Logando como: ', this.usuarioForm.value);
-    window.alert('Entrar: ' + JSON.stringify(this.usuarioForm.value ));
-    this.router.navigateByUrl('/cofres');
+
+    if (this.loginService.validaLogin(JSON.stringify(this.usuarioForm.value))){
+      //this.router.navigateByUrl('/cofres');
+
+      this.router.navigate(['./cofres'], { relativeTo: this.route, state: { user: JSON.stringify(this.usuarioForm.controls['user'].value) } });
+
+    }
   }
 
 }

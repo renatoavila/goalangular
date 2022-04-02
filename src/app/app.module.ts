@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt, 'pt');
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,12 +37,21 @@ import { GoalHistoricoComponent } from './views/goal-historico/goal-historico.co
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: GoalLoginComponent},
-      { path: 'cofres', component:GoalCofresComponent},
-      { path: 'user', component: GoalUserComponent}
+      { path: '', component: GoalLoginComponent },
+      { path: 'cofres', component: GoalCofresComponent },
+      { path: 'user', component: GoalUserComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+    {
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'BRL'
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

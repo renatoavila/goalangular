@@ -28,9 +28,9 @@ export class UsersService {
         catchError(this.handleError))
   }
 
-  // Obtem um User pelo id
-  getUserById(id: number): Observable<Users> {
-    return this.httpClient.get<Users>(this.url + '/' + id)
+  // Obtem um User pelo email
+  getUserById(email: String): Observable<Users> {
+    return this.httpClient.get<Users>(this.url + '/' + email)
       .pipe(
         retry(2),
         catchError(this.handleError)

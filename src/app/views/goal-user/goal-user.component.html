@@ -1,1 +1,23 @@
 <p>goal-user works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">userid</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.nome}}</td>
+        <td>{{user.sobrenome}}</td>
+        <td>{{user.userid}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <button type="button" class="btn btn-warning btn-sm" (click)="editUser(user)">Editar</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
