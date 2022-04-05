@@ -12,7 +12,7 @@ export class LoginService {
 
     //user=this.usu.getUserById(usuario)
     
-    window.alert('LoginService -> user : ' +  usuario );
+    //window.alert('LoginService -> user : ' +  usuario );
     return true;
 
   }
