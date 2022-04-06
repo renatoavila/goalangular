@@ -15,7 +15,7 @@ COPY . .
 
 # If you are building your code for production
 #ARG env=prod
-RUN npm run build --prod
+RUN npm run build --prod --base-href=/goal-ui/
 
 
 #CMD [ "npm", "start" ]
@@ -23,7 +23,7 @@ RUN npm run build --prod
 
 FROM nginx
 COPY --from=angular /usr/src/app/dist /usr/share/nginx/html
-#COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 ###############################################################################
