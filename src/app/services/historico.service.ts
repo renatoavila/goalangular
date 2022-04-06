@@ -9,7 +9,7 @@ import { Historico } from '../models/historico';
 })
 export class HistoricosService {
 
-  url = 'http://localhost:3009/historico'; // api rest
+  url = 'http://144.22.210.64:3009/historico'; // api rest
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }

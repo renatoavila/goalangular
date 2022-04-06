@@ -9,7 +9,7 @@ import { Cofre } from '../models/cofres';
 })
 export class CofresService {
 
-  url = 'http://localhost:3000/cofres'; // api rest
+  url = 'http://144.22.210.64/:3000/cofres'; // api rest
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
