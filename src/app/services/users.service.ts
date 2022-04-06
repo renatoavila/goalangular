@@ -9,7 +9,7 @@ import { Users } from '../models/users';
 })
 export class UsersService {
 
-  url = 'http://localhost:3003/users'; // api rest
+  url = 'http://144.22.210.64:3003/users'; // api rest
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
