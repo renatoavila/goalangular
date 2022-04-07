@@ -6,7 +6,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { LoginService } from 'src/app/services/login.service';
-import { usuario } from './usuario';
+
 
 @Component({
   selector: 'app-goal-login',
