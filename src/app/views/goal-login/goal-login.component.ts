@@ -35,15 +35,19 @@ export class GoalLoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     this.login.email = this.usuarioForm.controls['user'].value
     this.login.senha = this.usuarioForm.controls['senha'].value
 
-    if (this.loginService.validaLogin(this.login)){
-      //this.router.navigateByUrl('/cofres');
-      this.router.navigate(['./cofres'], { relativeTo: this.route, state: { user: JSON.stringify(this.usuarioForm.controls['user'].value) } });
-    }else{
-      window.alert('Falha no login!');
-    }
+    this.loginService.postLogin(this.login).subscribe((retorno : Boolean) => {
+      if (retorno){
+        //this.router.navigateByUrl('/cofres');
+        this.router.navigate(['./cofres'], { relativeTo: this.route, state: { user: JSON.stringify(this.login.email) } });
+      }else{
+        window.alert('Falha no login!');
+      }
+    });
+    this.usuarioForm.reset();
   }
 
 }

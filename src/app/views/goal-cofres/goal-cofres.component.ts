@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CofresService } from '../../services/cofres.service';
 import { Cofre } from '../../models/cofres';
 import { NgForm } from '@angular/forms';
-import { Router, NavigationExtras } from '@angular/router';  
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-goal-cofres',
@@ -10,7 +10,7 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./goal-cofres.component.css']
 })
 export class GoalCofresComponent implements OnInit {
-  
+
   cofre = {} as Cofre;
   cofres: Cofre[] = [];
 
@@ -26,11 +26,17 @@ export class GoalCofresComponent implements OnInit {
       pass: string
     } ;
 
-    this.usu=state.user;
-
+    if(state && state.user)
+    {
+      this.usu=state.user;
+    }
+    else{
+      this.usu =""
+      this.router.navigate(['./']);
+    }
   }
-  
-  
+
+
   ngOnInit() {
     this.getCofres();
   }
@@ -55,7 +61,7 @@ export class GoalCofresComponent implements OnInit {
     });
   }
 
- 
+
 
   // deleta um Cofre
   deleteCofre(cofre: Cofre) {

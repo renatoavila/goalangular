@@ -13,9 +13,7 @@ export class LoginService {
 
   url = 'http://144.22.210.64:9888/api/login/'; // api rest
 
-  validaLogin(login: Login) {
-    return this.postLogin(login);
-  }
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,6 +24,7 @@ export class LoginService {
 
   // Obtem todos os cofres
   postLogin(login : Login): Observable<Boolean>{
+
     return this.httpClient.post<Boolean>(this.url, JSON.stringify(login), this.httpOptions)
       .pipe(
         retry(2),
@@ -44,6 +43,7 @@ export class LoginService {
       errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
     }
     console.log(errorMessage);
+    window.alert('Falha no login!');
     return throwError(errorMessage);
   };
 
